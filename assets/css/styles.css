@@ -1,0 +1,266 @@
+/* Fuentes */
+@font-face {
+    font-family: GreatVibes;
+    src: url(../fonts/GreatVibes-Regular.ttf);
+}
+
+@font-face {
+    font-family: just-sans;
+    src: url(../fonts/JUST-Sans.otf);
+}
+
+/* Variables de colores */
+:root {
+    --dark-color: #272727;
+    --gold-color: #ac936b;
+    --white-color: #e2e2e2;
+    --transparent-dark: #272727ce;
+    --transparent-white: #e2e2e2ce;
+}
+
+/* Colores */
+.dark-color { color: var(--dark-color); }
+.gold-color { color: var(--gold-color); }
+.white-color { color: var(--white-color); }
+.bg-primary-color { background-color: var(--dark-color); }
+.bg-transparent-dark { background-color: var(--transparent-dark) !important; }
+.bg-transparent-white { background-color: var(--transparent-white) !important; }
+
+/* Tipografía */
+.logo-title { font-family: GreatVibes; font-size: 45px; color: var(--white-color) !important; }
+.font-1 { font-family: just-sans; }
+.font-2 { font-family: GreatVibes; }
+.text-md { font-size: 60px; }
+
+/* Navbar */
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--white-color);
+    font-family: just-sans;
+    font-size: 20px;
+    width: 95%;
+    &:hover { color: var(--gold-color); font-weight: bold; }
+    &:focus { color: var(--gold-color); font-weight: bold; }
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28226, 226, 226, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-dark .navbar-toggler-icon:hover {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28172, 147, 107, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    opacity: 0.7;
+}
+
+.nav-item { transition: all 0.3s ease-out; }
+.nav-link { margin-left: 8px; }
+
+.nav-social { display: flex; gap: 20px; justify-content: center; }
+.nav-social img:hover { transform: scale(1.2); }
+
+/* Dropdown */
+.dropdown-menu { background-color: rgb(59, 59, 59); }
+.dropdown-item:hover { background-color: var(--dark-color); }
+
+/* Botones */
+.btn-primary-color {
+    background-color: var(--gold-color);
+    text-decoration: none;
+    color: var(--dark-color);
+    &:hover { color: var(--gold-color); background-color: var(--dark-color); }
+}
+
+/* Efectos Hover */
+.hover-grow { transition: transform 0.3s ease; }
+.hover-grow:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all ease 0.6s;
+    background-color: white !important;
+    & h4 { color: var(--dark-color) !important; font-weight: bold; transition: transform 0.3s ease; }
+}
+
+/* Background Images */
+.bg-main-img {
+    background: url(../img/menu-home-invitaciones/fondo-main.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-invitaciones {
+    background: rgb(226, 226, 226);
+    background: linear-gradient(0deg, rgba(226, 226, 226, 1) 15%, rgba(226, 226, 226, 1) 54%, var(--gold-color) 100%);
+}
+
+.bg-beneficios {
+    background: var(--gold-color);
+    background: linear-gradient(0deg, var(--gold-color) 15%, var(--gold-color) 47%, var(--white-color) 100%);
+}
+
+/* SCROL */
+#scrollToTop {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    right: 5px;
+    z-index: 1000;
+    background-color: var(--transparent-dark);
+    border: none;
+    padding: 15px 15px;
+    border-radius: 20%;
+    cursor: pointer;
+    &:hover { background-color: var(--dark-color); }
+}
+
+/* WHATSAPP */
+#whatsapp-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+    z-index: 1000;
+    background-color: var(--white-color);
+    border: none;
+    padding: 13px 13px;
+    border-radius: 20%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#whatsapp-btn:hover { background-color: var(--dark-color); }
+
+#whatsapp-btn button { background-color: transparent; border: none; padding: 0; }
+
+/* PRELOAD */
+#preloader {
+    background: #fafafa;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out;
+}
+
+#preloader.hidden { opacity: 0; pointer-events: none; }
+
+/* CARRUSEL */
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #151515 !important;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* OWLND */
+#tipos {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#carouselExampleIndicators {
+    max-height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-item .img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 200px;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 30px;
+    left: 9px;
+    top: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.phone-cover {
+    width: 200px;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+#basico{
+    background-image: url(../img/planes/img-planes-1.jpg) ;
+    background-position: center;
+    background-size:cover;
+}
+
+#premium{
+    background-image: url(../img/planes/img-planes-2.jpg) ;
+    background-position: center;
+    background-size:cover;
+}
+
+#gold{
+    background-image: url(../img/planes/img-planes-3.jpg) ;
+    background-position: center;
+    background-size:cover;
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}
